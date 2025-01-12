@@ -1,6 +1,8 @@
 {
-  "name": "week-18",
+  "name": "paytm-final-project",
   "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -12,14 +14,11 @@
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "prettier": "^3.2.5",
-    "turbo": "latest"
+    "turbo": "^2.3.3"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "npm@10.2.4",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "packageManager": "npm@10.2.4"
+ 
 }
