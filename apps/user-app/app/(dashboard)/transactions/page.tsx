@@ -1,4 +1,6 @@
-export default function () {
-    return <div>Transactions Dasbboard</div>;
-  }
-  
+
+export default function() {
+    return <div>
+        Transactions
+    </div>
+}

@@ -1,20 +1,18 @@
 FROM node:20.12.0-alpine3.19
 
-WORKDIR /paytm
+WORKDIR /usr/src/app
 
-# inefficient
 COPY package.json package-lock.json turbo.json tsconfig.json ./
+
 COPY apps ./apps
 COPY packages ./packages
 
-# Install Dependencies
+# Install dependencies
 RUN npm install
-
+# Can you add a script to the global package.json that does this?
 RUN npm run db:generate
 
-# Build only user-app
-WORKDIR /paytm/apps/user-app
-RUN npm run build
+# Can you filter the build down to just one app?
+ 
 
-# start the user-app
-CMD [ "npm", "run", "start" ]
+CMD ["npm", "run", "start-user-app"]

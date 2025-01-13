@@ -1,3 +1,5 @@
+import React from "react";
+
 export function Card({
   title,
   children,
@@ -6,9 +8,9 @@ export function Card({
   children?: React.ReactNode;
 }): JSX.Element {
   return (
-    <div className="border p-4">
+    <div className="border p-6 bg-white rounded-xl bg-[#ededed]">
       <h1 className="text-xl border-b pb-2">{title}</h1>
-      <div>{children}</div>
+      {children}
     </div>
   );
 }
