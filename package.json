@@ -1,24 +1,31 @@
 {
   "name": "paytm-final-project",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
-
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "db:generate": "cd packages/db && npx prisma generate && cd ../.."
+    "db:generate": "cd packages/db && npx prisma generate && cd ../..",
+    "build:user-app": "cd apps/user-app && turbo  build --filter=apps/user-app && cd ../.."
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "eslint-config-turbo": "^2.3.3",
+    "eslint-plugin-turbo": "^2.3.3",
     "prettier": "^3.2.5",
     "turbo": "^2.3.3"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "npm@10.2.4"
- 
+  "packageManager": "npm@10.2.4",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
