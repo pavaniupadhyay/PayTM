@@ -1,14 +1,13 @@
 {
   "name": "paytm-final-project",
   "private": true,
-  
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "db:generate": "cd packages/db && npx prisma generate && cd ../..",
-    "build:user-app": "cd apps/user-app && npm run build && cd ../.."
+    "build:user-app": "turbo  build --filter=apps/user-app"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -25,6 +24,8 @@
   "workspaces": [
     "apps/user-app",
     "packages/*"
-    
-  ]
+  ],
+  "dependencies": {
+    "user-app": "^1.0.0"
+  }
 }
